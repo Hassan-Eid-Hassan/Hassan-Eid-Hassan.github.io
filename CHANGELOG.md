@@ -1,3 +1,8 @@
+# beta-v1.0.2
+
+## fix video size 
+Compress the services pages background video 
+
 # beta-v1.0.1
 
 ## feature Added
