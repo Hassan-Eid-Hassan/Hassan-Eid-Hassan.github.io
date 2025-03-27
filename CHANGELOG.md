@@ -1,3 +1,12 @@
+# beta-v2.0.0
+
+## feature Added
+Added resume page.
+Added KCNA to the certifications sections.
+
+## fixes
+Fix active page in each service page.
+
 # beta-v1.0.2
 
 ## fix video size 
