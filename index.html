@@ -65,6 +65,38 @@
   </nav>
   <!--/ Nav End /-->
 
+  <!-- Calendly badge widget begin -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+  <style>
+    /* Move Calendly badge 20px away from right edge */
+    .calendly-badge-widget {
+      right: 70px !important;
+    }
+    
+    /* Make the Calendly button wider & nicer */
+    .calendly-badge-content {
+      min-width: 200px !important; /* default is ~140px */
+      padding: 12px 20px !important;
+      font-size: 16px !important;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1) !important; /* subtle text shadow */
+    }
+  </style>
+
+  <script type="text/javascript">
+    window.onload = function() {
+      Calendly.initBadgeWidget({
+        url: 'https://calendly.com/hassan-eid/session',
+        text: '📅 Book a Session/Meeting',
+        color: '#18d26e',
+        textColor: '#ffffff',
+        branding: false
+      });
+    }
+  </script>
+  <!-- Calendly badge widget end -->
+
   <!--/ Intro Skew Star /-->
   <div id="home" class="intro route bg-image">
     <div class="overlay-itro"></div>
