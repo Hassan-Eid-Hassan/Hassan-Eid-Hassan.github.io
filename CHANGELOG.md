@@ -1,3 +1,9 @@
+# beta-v2.1.0
+
+## feature Added
+Added CKS to the certifications sections.
+Updated the CV.
+
 # beta-v2.0.0
 
 ## feature Added
