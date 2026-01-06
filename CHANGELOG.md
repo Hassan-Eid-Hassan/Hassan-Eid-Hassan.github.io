@@ -5,7 +5,7 @@
 - Added VOIS-2025 to the Companies Appreciation sections.
 - Updated personal photo.
 
-## Fixs
+## fixes
 - fix typo "I'am" to "I'm"
 
 # beta-v2.1.0
