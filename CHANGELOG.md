@@ -1,3 +1,13 @@
+# beta-v2.2.0
+
+## feature Added
+- Added KCSA to the certifications sections.
+- Added VOIS-2025 to the Companies Appreciation sections.
+- Updated personal photo.
+
+## Fixs
+- fix typo "I'am" to "I'm"
+
 # beta-v2.1.0
 
 ## feature Added
