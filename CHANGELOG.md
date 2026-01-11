@@ -1,3 +1,8 @@
+# v3.0.1
+
+## feature Added
+- Updated CV.
+
 # v3.0.0
 
 ## feature Added
