@@ -1,3 +1,8 @@
+# v3.0.0
+
+## feature Added
+- Added CNCF Kubestronauts sections.
+
 # beta-v2.2.0
 
 ## feature Added
