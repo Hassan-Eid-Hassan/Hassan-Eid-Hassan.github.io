@@ -1,9 +1,14 @@
+# v3.0.2
+
+## feature Added
+- Updated Title.
+
 # v3.0.1
 
 ## feature Added
 - Updated CV.
 
-# v3.0.0
+# v3.0.0a
 
 ## feature Added
 - Added CNCF Kubestronauts sections.
