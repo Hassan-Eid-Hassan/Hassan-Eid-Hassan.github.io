@@ -1,3 +1,8 @@
+# v3.0.3
+
+## feature Added
+- Added AWS Certified AI Practitioner to the certifications sections.
+
 # v3.0.2
 
 ## feature Added
