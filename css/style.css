@@ -657,7 +657,7 @@ a:hover {
 }
 
 .intro-single .breadcrumb .breadcrumb-item.active {
-  color: #cde1f8;
+  color: #ffffff;
 }
 
 .intro-single .breadcrumb a {
@@ -822,7 +822,7 @@ a:hover {
 ======================================*/
 
 .testimonials .owl-carousel .owl-item img {
-  width: auto;
+  width: 600px;
 }
 
 .testimonial-box {

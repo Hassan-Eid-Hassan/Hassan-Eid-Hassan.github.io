@@ -1,0 +1,294 @@
+/*======================================
+  STYLE-SVC — Service Detail Pages
+  Hassan Eid XOps Portfolio
+  Load AFTER style.css + style-enhanced.css
+======================================*/
+
+/* ─── Shared section hero for service pages ─── */
+.intro-single {
+  min-height: 280px !important;
+  display: flex;
+  align-items: center;
+}
+.intro-single .intro-title {
+  font-size: clamp(1.8rem, 5vw, 3rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.025em;
+  background: linear-gradient(95deg, #ffffff 30%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.intro-single .overlay-itro {
+  background: linear-gradient(
+    135deg,
+    rgba(0,0,0,0.92) 0%,
+    rgba(0,0,0,0.70) 55%,
+    rgba(24,210,110,0.07) 100%
+  ) !important;
+}
+.intro-single .breadcrumb {
+  background: transparent !important;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+.intro-single .breadcrumb-item a { color: var(--green) !important; }
+.intro-single .breadcrumb-item.active a {
+  color: rgba(255,255,255,0.55) !important;
+  pointer-events: none;
+}
+.intro-single .breadcrumb-item + .breadcrumb-item::before {
+  color: rgba(255,255,255,0.3) !important;
+}
+
+/* ─── Article wrapper ─── */
+.blog-wrapper { background: var(--dark) !important; padding-bottom: 5rem; }
+.blog-wrapper .container > .title-left { margin-bottom: 0; }
+
+/* ─── Service page section title ─── */
+.svc-page-title {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+.svc-page-subtitle {
+  font-size: 1rem;
+  color: var(--text-sub);
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+/* ─── Post box (service article) ─── */
+.post-box {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r-xl);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: 2.25rem 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.55);
+}
+.post-box + .post-box {
+  border-top: 1px solid var(--divider);
+}
+.post-thumb {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  margin-bottom: 1.75rem;
+}
+.post-thumb img {
+  border-radius: var(--r-lg) !important;
+  transition: transform 0.65s var(--ease);
+}
+.post-thumb img:hover { transform: scale(1.02); }
+
+.article-title {
+  font-size: clamp(1.3rem, 3vw, 1.75rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+  color: #fff !important;
+  margin-bottom: 1rem;
+}
+
+.article-content p { color: var(--text-sub); line-height: 1.75; font-size: 0.95rem; }
+.article-content h5 { color: rgba(255,255,255,0.9); margin-bottom: 0.4rem; font-weight: 700; }
+
+/* ─── Plan cards ─── */
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+.plan-card {
+  background: var(--dark-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r-lg);
+  padding: 1.75rem 1.5rem 1.5rem;
+  transition: transform var(--t) var(--ease), border-color var(--t), box-shadow var(--t);
+  position: relative;
+  overflow: hidden;
+}
+.plan-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--green), transparent);
+  opacity: 0;
+  transition: opacity var(--t);
+}
+.plan-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(24,210,110,0.38);
+  box-shadow: 0 18px 55px rgba(0,0,0,0.6), 0 0 0 1px rgba(24,210,110,0.08);
+}
+.plan-card:hover::before { opacity: 1; }
+
+.plan-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--green);
+  border: 1px solid rgba(24,210,110,0.4);
+  border-radius: 2rem;
+  padding: 0.18rem 0.7rem;
+  background: var(--green-dim);
+  margin-bottom: 0.85rem;
+}
+.plan-card h5 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+}
+.plan-card .plan-tagline {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+}
+.plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.84rem;
+  color: var(--text-sub);
+  padding: 0.38rem 0;
+  border-bottom: 1px solid var(--divider);
+  line-height: 1.55;
+}
+.plan-features li:last-child { border-bottom: none; }
+.plan-features li i {
+  color: var(--green);
+  font-size: 0.9rem;
+  margin-top: 0.18rem;
+  flex-shrink: 0;
+}
+.plan-features li strong { color: rgba(255,255,255,0.85); }
+
+.plan-cost {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--divider);
+}
+.plan-cost .cost-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.plan-cost .cost-value {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--green);
+  letter-spacing: -0.01em;
+}
+
+/* Recommended badge */
+.plan-card.plan-featured {
+  border-color: rgba(24,210,110,0.45);
+  background: linear-gradient(160deg, rgba(24,210,110,0.06) 0%, var(--dark-card) 60%);
+}
+.plan-card.plan-featured::before { opacity: 1; }
+.plan-recommend-badge {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: var(--green);
+  color: #000;
+  border-radius: 2rem;
+  padding: 0.15rem 0.55rem;
+  font-weight: 700;
+}
+
+/* ─── Blockquote / note ─── */
+.blockquote {
+  background: var(--green-dim);
+  border-left: 3px solid var(--green);
+  border-radius: 0 var(--r) var(--r) 0;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.blockquote p { color: var(--text-sub) !important; font-size: 0.88rem !important; margin-bottom: 0 !important; }
+
+/* ─── Plans offered heading ─── */
+.plans-heading {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.plans-heading::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--divider);
+}
+
+/* ─── CTA below plans ─── */
+.svc-cta {
+  font-size: 0.95rem;
+  color: var(--text-sub);
+  line-height: 1.7;
+  padding: 1rem 0 1.5rem;
+}
+
+/* ─── Request form card ─── */
+.form-comments {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r-xl);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: 2rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+/* ─── Section eyebrow on service pages ─── */
+.svc-eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 0.4rem;
+  text-align: center;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .post-box { padding: 1.5rem 1.25rem; }
+  .plan-card { padding: 1.4rem 1.25rem; }
+  .form-comments { padding: 1.4rem; }
+  .plans-grid { grid-template-columns: 1fr; }
+}

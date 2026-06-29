@@ -7,7 +7,7 @@
     if( ! $('#mainNav').hasClass('navbar-reduce')) {
       $('#mainNav').addClass('navbar-reduce');
     }
-  })
+  });
 
   // Preloader
   $(window).on('load', function () {
@@ -117,28 +117,49 @@
 
 })(jQuery);
 
+// ── EmailJS init ──
 (function(){
 	emailjs.init({
 	  publicKey: "1FytN64xSkxfSTRGx",
 	});
- })();
+})();
 
-document.querySelector('.contactForm').addEventListener('submit', function (event) {
-event.preventDefault();
+// ── Contact form handler — supports multiple forms per page ──
+document.querySelectorAll('.contactForm').forEach(function(form) {
+	form.addEventListener('submit', function (event) {
+		event.preventDefault();
 
-// Gather form data
-const formData = {
-	name: document.getElementById('name').value,
-	email: document.getElementById('email').value,
-	subject: document.getElementById('subject').value,
-	message: document.querySelector('[name="message"]').value,
-};
+		var nameEl    = form.querySelector('#name, [name="name"]');
+		var emailEl   = form.querySelector('#email, [name="email"]');
+		var subjectEl = form.querySelector('#subject, [name="subject"]');
+		var messageEl = form.querySelector('[name="message"]');
 
-emailjs.send("service_si366ov", "template_7th00ec", formData)
-	.then(function () {
-	alert("Message sent successfully!");
-	}, function (error) {
-	alert("Failed to send message. Please try again.");
-	console.error("EmailJS error:", error);
+		var formData = {
+			name:    nameEl    ? nameEl.value    : '',
+			email:   emailEl   ? emailEl.value   : '',
+			subject: subjectEl ? subjectEl.value : '',
+			message: messageEl ? messageEl.value : '',
+		};
+
+		// Basic client-side guard
+		if (!formData.name || !formData.email || !formData.message) {
+			alert("Please fill in all required fields.");
+			return;
+		}
+
+		var btn = form.querySelector('button[type="submit"]');
+		if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+
+		emailjs.send("service_si366ov", "template_7th00ec", formData)
+			.then(function () {
+				alert("Message sent successfully! I'll get back to you soon.");
+				form.reset();
+			}, function (error) {
+				alert("Failed to send message. Please try again or email hassaneid339@gmail.com directly.");
+				console.error("EmailJS error:", error);
+			})
+			.finally(function () {
+				if (btn) { btn.disabled = false; btn.textContent = 'Send Message'; }
+			});
 	});
 });
